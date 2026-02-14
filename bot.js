@@ -667,7 +667,8 @@ Bot.initEvents = function () {
 };
 
 Bot.login = function () {
-  this.bot.login(Files.data.settings.token);
+  const token = process.env.TOKEN || Files.data.settings.token;
+  this.bot.login(token);
 };
 
 Bot.onReady = function () {
